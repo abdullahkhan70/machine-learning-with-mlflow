@@ -1,8 +1,13 @@
 import os
+from dotenv import load_dotenv, find_dotenv
 from ml_project.constants import *
 from ml_project.utils.common import read_yaml, create_directories
 from ml_project.entity.config_entity import (
     DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig)
+
+dotenv_path = os.path.join('.env')
+print('Dot Env Path: ' + str(dotenv_path))
+load_dotenv(find_dotenv(filename=dotenv_path))
 
 
 class ConfigurationManager:

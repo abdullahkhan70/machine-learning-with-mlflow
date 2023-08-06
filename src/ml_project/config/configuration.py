@@ -1,6 +1,8 @@
+import os
 from ml_project.constants import *
 from ml_project.utils.common import read_yaml, create_directories
-from ml_project.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
+from ml_project.entity.config_entity import (
+    DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig)
 
 
 class ConfigurationManager:
@@ -103,3 +105,36 @@ class ModelTrainerConfirgurationManager:
         create_directories([config.root_dir])
 
         return model_trainer_config
+
+
+class ModelEvaluationConfigurationManager:
+    def __init__(
+        self,
+        config_path=CONFIG_FILE_PATH,
+        params_path=PARAMS_FILE_PATH,
+        schema_path=SCHEMA_FILE_PATH
+    ) -> None:
+        self.config = read_yaml(config_path)
+        self.params = read_yaml(params_path)
+        self.schema = read_yaml(schema_path)
+
+        create_directories([self.config.artifacts_root])
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        schema = self.schema.target_column
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_path=config.test_path,
+            model_path=config.model_path,
+            all_params=params,
+            metric_file_name=config.metric_file_name,
+            target_column=schema.name,
+            mlflow_url=os.environ.get("MLFLOW_TRACKING_URI")
+        )
+
+        create_directories([config.root_dir])
+
+        return model_evaluation_config

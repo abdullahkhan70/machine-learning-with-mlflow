@@ -60,7 +60,7 @@ def save_json(path: Path, data: dict):
         data (dict): data to be saved to json file.
     """
     with open(path, "w") as file:
-        json.dump(data, f, indent=4)
+        json.dump(data, file, indent=4)
     logger.info(f"Json file save at: {path}")
 
 
@@ -107,13 +107,14 @@ def load_bin(path: Path) -> Any:
     logger.info(f"Binary file loaded from: {path}")
     return data
 
+
 @ensure_annotations
 def get_size(path: Path) -> str:
     """get size in KB
-    
+
     Args:
         path (Path): path of the file.
-    
+
     Returns:
         str: size in KB
     """

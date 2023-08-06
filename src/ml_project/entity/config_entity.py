@@ -18,7 +18,6 @@ class DataValidationConfig:
     all_schema: dict
 
 
-
 @dataclass(frozen=True)
 class ModelTrainerConfig:
     root_dir: Path
@@ -34,3 +33,14 @@ class ModelTrainerConfig:
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_path: Path
+    model_path: Path
+    metric_file_name: Path
+    all_params: dict
+    target_column: str
+    mlflow_url: str

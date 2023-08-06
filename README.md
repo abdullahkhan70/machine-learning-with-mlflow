@@ -70,6 +70,6 @@ export MLFLOW_TRACKING_URI=https://dagshub.com/abdullahkhan70/machine-learning-w
 
 export MLFLOW_TRACKING_USERNAME=abdullahkhan70
 
-export MLFLOW_TRACKING_PASSWORD=e0a0c2fcc0e62a10915f3820517b36b33e0968ae
+export MLFLOW_TRACKING_PASSWORD=PASSWORD_FROM_DAGSHUB
 
 '''

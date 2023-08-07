@@ -23,7 +23,7 @@
 git clone https://github.com/abdullahkhan70/machine-learning-with-mlflow.git
 ```
 
-## Step# 01: Create a conda enviroment after opeing trhe repository
+## Step# 01: Create a conda enviroment after opening the repository
 
 ```bash
 conda create -m ml_project python=3.10.8 -y

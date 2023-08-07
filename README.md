@@ -19,34 +19,35 @@
 
 ## Clone the repository
 
-'''bash
+```bash
 git clone https://github.com/abdullahkhan70/machine-learning-with-mlflow.git
-'''
+```
+
 ## Step# 01: Create a conda enviroment after opeing trhe repository
 
-'''bash
+```bash
 conda create -m ml_project python=3.10.8 -y
-'''
+```
 
-'''bash
+```bash
 conda activate ml_project
-'''
+```
 
 ## Step# 02: Install the dependencies from requirement
 
-'''bash
+```bash
 pip install -r requirements.txt
-'''
+```
 
-'''bash
+```bash
 # Finally run the following command.
 python app.py
-'''
+```
 
 Now,
-'''bash
+```bash
 # open up your local host and port.
-'''
+```
 
 ## MLFlow
 [Documentation](https://mlflow.org/docs/latest/index.html)
@@ -65,11 +66,11 @@ python app.py
 
 Run this to export as env variables.
 
-'''bash
+```bash
 export MLFLOW_TRACKING_URI=https://dagshub.com/abdullahkhan70/machine-learning-with-mlflow.mlflow
 
 export MLFLOW_TRACKING_USERNAME=abdullahkhan70
 
 export MLFLOW_TRACKING_PASSWORD=PASSWORD_FROM_DAGSHUB
 
-'''
+```

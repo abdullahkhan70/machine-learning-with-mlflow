@@ -50,8 +50,6 @@ try:
 except Exception as error:
     raise
 
-time.sleep(10)
-
 try:
     logger.info(f"Stage: {STAGE_MODEL_EVALUATION} has started \n")
     obj = ModelEvaluationPipeline()
